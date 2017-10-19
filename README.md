@@ -16,7 +16,7 @@ To install gensim use:
 pip install gensim
 ```
 ### Installation
-Download repository.
+Download repository and populate json folder with the JSON objects. You will need to manually copy the JSON objects in the folder.
 ## Running
 ### Training the Model
 There is already a trained model saved as "ldaEntireDataset" in the folder. It was trained for about 6 hours on the entire dataset (the first 20 objects were not used in the training to serve as testing set).
