@@ -19,11 +19,11 @@ for dirname, dirnames, filenames in os.walk('.'):
 
 # this takes ONLY the body of the articles and makes a list of them(a list of strings)
 for js in all_json_files:
-    while(training_data_size!=0):
-        with open(os.path.join('json/', js)) as json_file:
-            json_text = json.load(json_file)
-            documentBodies.append(json_text['m_szDocBody'])
-        training_data_size-=1
+    # while(training_data_size!=0):
+    with open(os.path.join('json/', js)) as json_file:
+        json_text = json.load(json_file)
+        documentBodies.append(json_text['m_szDocBody'])
+        # training_data_size-=1
 documentBodies = documentBodies[21:]
 
 #------------------------------------------------Preprocess Corpus of Document Bodies----------------------------------------------#
