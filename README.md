@@ -19,27 +19,31 @@ pip install gensim
 Download repository and populate json folder with the JSON objects. You will need to manually copy the JSON objects in the folder.
 ## Running
 ### Training the Model
-There is already a trained model saved as "ldaEntireDataset" in the folder. It was trained for about 6 hours on the entire dataset (the first 20 objects are not used in the training to serve as testing set).
+There is already a trained model saved as "ldaEntireDataset" in the folder. It was trained for about 6 hours on the entire dataset (the first 20 objects were not used in the training to serve as testing set).
 
 To train the model on another dataset, run in the command prompt (or Anaconda prompt):
 
 ``` python train.py x ```
 
-where x is the number of JSON objects to include in the training set (make sure x is bigger than 21 as the first 20 objects are separated for testing).
+where x is the number of JSON objects to include in the training set.
 
 The model will be saved as "lda" to be distinct from the model trained on the entire dataset.
 ### Getting a list of the topics
 To get a list of the distributions run:
 
-``` python print_topic_distribution.py ```
+``` python print_topic_distribution.py x```
 
-The topics are printed in a text file with the words contained in each topic.
+where x is the size of the training set for the model. Type "entire" (no quotations) to get the list for the model using the entire dataset.
+
+The topics are printed in a text file in the folder "topic distributions" with the words contained in each topic.
 
 The script uses the model trained on the entire set. To predict based on other models manually change the model and corpus loaded in the script. Same goes for predicting the topic distribution.
 ### Predicting a topic distribution for unseen document
 Run in the command prompt (or Anaconda prompt):
 
-``` python predict.py ```
+``` python predict.py x```
+
+where x is the size of the training set for the model. Type "entire" (no quotations) to get a prediction based on the model using the entire dataset.
 
 Once you run predict.py, you'll be prompted to enter the name/id of the unseen document. Please enter the number of the JSON file **surrounded by quotation marks**(eg for the file 232.JSON, write "232").
 
